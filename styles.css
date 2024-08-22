@@ -1,1 +1,26 @@
-
+img {
+  height: 300px;
+  border-radius: 3%;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+}
+#M {
+  display: flex;
+  margin-left: 170px;
+}
+#W {
+  display: flex;
+  margin-left: 70px;
+}
+#D {
+  display: block;
+  margin-left: 180px;
+}
+h1 {
+  font-size: 50px;
+}
+p {
+  font-size: 20px;
+}
