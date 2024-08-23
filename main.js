@@ -1,13 +1,4 @@
 var mensCollection = [
-  // ClothingItem(
-  //   "Men's T-Shirt",
-  //   19.99,
-  //   "A comfortable cotton t-shirt.",
-  //   "Blue",
-  //   "M",
-  //   10,
-  //   "menimages/T-shirt.jpg"
-  // ),
   ClothingItem(
     "Men's Jeans",
     49.99,
@@ -301,9 +292,8 @@ function addToFavorites() {
     console.log(mensCollection[i]);
 
     if (mensCollection[i].name === itemName) {
-      console.log(mensCollection[i], "😊😊");
-
       favoriteCollection.push(mensCollection[i]);
+      return;
     }
   }
 
