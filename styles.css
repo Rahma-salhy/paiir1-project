@@ -2,7 +2,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: bisque;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -31,4 +34,26 @@ button {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+}
+.item {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  max-height: 500px;
+  margin: 10px;
+  background-color: antiquewhite;
+  padding: 20px;
+  justify-self: center;
+  border-radius: 20px;
+}
+.inneritem {
+  padding: 10px;
+  background-color: rgb(221, 225, 204);
+  border-radius: 10px;
+}
+img {
+  border-radius: 30px;
 }

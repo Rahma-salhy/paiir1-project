@@ -1,13 +1,13 @@
 var mensCollection = [
-  ClothingItem(
-    "Men's T-Shirt",
-    19.99,
-    "A comfortable cotton t-shirt.",
-    "Blue",
-    "M",
-    10,
-    "menimages/T-shirt.jpg"
-  ),
+  // ClothingItem(
+  //   "Men's T-Shirt",
+  //   19.99,
+  //   "A comfortable cotton t-shirt.",
+  //   "Blue",
+  //   "M",
+  //   10,
+  //   "menimages/T-shirt.jpg"
+  // ),
   ClothingItem(
     "Men's Jeans",
     49.99,
@@ -91,15 +91,6 @@ var womensCollection = [
     "M",
     9,
     "womanimages/cardigan.jpg"
-  ),
-  ClothingItem(
-    "Women's Trousers",
-    44.99,
-    "Elegant office trousers.",
-    "Navy",
-    "L",
-    11,
-    "womanimages/trousers.jpg"
   ),
   ClothingItem(
     "Women's Sandals",
@@ -191,6 +182,8 @@ function displayItems(collection, containerId) {
 
     var itemDiv = document.createElement("div");
     itemDiv.className = "item";
+    var inneritemDiv = document.createElement("div");
+    inneritemDiv.className = "inneritem";
 
     var itemName = document.createElement("h3");
     itemName.textContent = item.name;
@@ -214,13 +207,13 @@ function displayItems(collection, containerId) {
     itemImage.src = item.image;
 
     itemDiv.appendChild(itemImage);
-    itemDiv.appendChild(itemName);
-    itemDiv.appendChild(itemPrice);
-    itemDiv.appendChild(itemDescription);
-    itemDiv.appendChild(itemColor);
-    itemDiv.appendChild(itemSize);
-    itemDiv.appendChild(itemQuantity);
-
+    inneritemDiv.appendChild(itemName);
+    inneritemDiv.appendChild(itemPrice);
+    inneritemDiv.appendChild(itemColor);
+    inneritemDiv.appendChild(itemSize);
+    inneritemDiv.appendChild(itemQuantity);
+    inneritemDiv.appendChild(itemDescription);
+    itemDiv.appendChild(inneritemDiv);
     container.appendChild(itemDiv);
   }
 }
@@ -303,10 +296,14 @@ function searchItem(collection, search) {
 
 function addToFavorites() {
   var itemName = document.getElementById("favoriteItemName").value;
+
   for (var i = 0; i < mensCollection.length; i++) {
+    console.log(mensCollection[i]);
+
     if (mensCollection[i].name === itemName) {
+      console.log(mensCollection[i], "😊😊");
+
       favoriteCollection.push(mensCollection[i]);
-      return;
     }
   }
 
@@ -316,6 +313,7 @@ function addToFavorites() {
       return;
     }
   }
+  console.log(favoriteCollection);
 
   displayItems(favoriteCollection, "favoritesContainer");
 }
